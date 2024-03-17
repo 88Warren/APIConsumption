@@ -2,7 +2,7 @@
 # Objective:
 # Develop a script that includes capabilities for data transformation and advanced retrieval.
 # Devise a function to transform the retrieved data in a meaningful way. 
-# This could involve summarizing data, such as categorizing posts, calculating average engagement metrics, or
+# This could involve summarising data, such as categorising posts, calculating average engagement metrics, or
 # other innovative transformations that add value.
 # Store the transformed data in a manner that distinguishes it from the original data, either by
 # using a separate file or a dedicated section within the existing file.
@@ -24,15 +24,15 @@ def get_posts():
         print("Failed to retrieve posts. Status code:", response.status_code)
         return None
 
-# The categorize_posts(posts) function categorizes posts based on user ID.
-def categorize_posts(posts):
-    categorized_posts = {"categories": {}}
+# The categorise_posts(posts) function categorises posts based on user ID.
+def categorise_posts(posts):
+    categorised_posts = {"categories": {}}
     for post in posts:
         userId = post['userId']
-        if userId not in categorized_posts["categories"]:
-            categorized_posts["categories"][userId] = []
-        categorized_posts["categories"][userId].append(post)
-    return categorized_posts
+        if userId not in categorised_posts["categories"]:
+            categorised_posts["categories"][userId] = []
+        categorised_posts["categories"][userId].append(post)
+    return categorised_posts
 
 # The save_to_file(data, filename) function saves data to a JSON file.
 def save_to_file(data, filename):
@@ -55,8 +55,8 @@ def search_posts_by_keyword(posts, keyword):
 if __name__ == "__main__":
     posts = get_posts()
     if posts:
-        categorized_posts = categorize_posts(posts)
-        save_to_file(categorized_posts, "categorized_posts.json")
+        categorised_posts = categorise_posts(posts)
+        save_to_file(categorised_posts, "categorised_posts.json")
 
         # Example usage of filter_posts_by_user function
         filtered_posts = filter_posts_by_user(posts, 1)
@@ -77,6 +77,6 @@ if __name__ == "__main__":
 
 # The script will perform the following actions:
 # Retrieve posts data from the JSONPlaceholder API.
-# Categorize the posts based on user ID and save the categorized data to a file named categorized_posts.json.
+# Categorise the posts based on user ID and save the categorised data to a file named categorised_posts.json.
 # Filter posts by a specific user ID and display the titles of those posts.
 # Search for posts containing a specific keyword and display the titles of matching posts.
